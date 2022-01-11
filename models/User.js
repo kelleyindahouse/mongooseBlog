@@ -9,7 +9,11 @@ const User = new Schema({
     type: String,
     required: true,
     unique: true
-  }
+  },
+  posts: [{
+    type: Schema.Types.ObjectId,
+    ref: 'post'
+  }]
 }, { timestamps: true })
 
 User.plugin(require('passport-local-mongoose'))
